@@ -17,3 +17,11 @@ function statusChangeCallback(response) {
          FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
   }
 }
+
+function changeUser(response){
+    console.log('test successful')
+    //Add code to change name and image 
+    $('facebookLogin').hide();
+    $('#name').text(response.name);
+    $('img#photo').attr("src", response.picture.data.url);
+}
